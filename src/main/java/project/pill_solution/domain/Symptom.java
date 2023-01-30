@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import project.pill_solution.converter.StringListConverter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,9 +27,14 @@ public class Symptom {
     @Column
     private String imageUrl;
 
-
     @Column @Getter
     private String provideUrl;
+
+    // 양방형 맵핑 추가 
+    @OneToMany(mappedBy = "symptom", cascade = CascadeType.ALL)
+    @Getter
+    private List<Prescription> prescriptions = new ArrayList<>();
+
 
 
 }

@@ -33,7 +33,7 @@ public class MainPageService {
             SymptomResponseDto tempDto = new SymptomResponseDto();
             tempDto.setSymptomName(symptom.getSymptomName());
             tempDto.setProvideUrl(symptom.getProvideUrl());
-            tempDto.setMainPagePrescriptionDetail(symptom.getSymptomDetail());
+            tempDto.setPrescriptionDetail(symptom.getSymptomDetail());
 
             responseDto.add(tempDto);
         }

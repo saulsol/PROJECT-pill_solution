@@ -20,6 +20,7 @@ public class Prescription {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "symptom_id")
+    @Getter
     private Symptom symptom;
 
     @Column @Getter
@@ -35,15 +36,15 @@ public class Prescription {
     @Column @Getter
     private String drugEffect; // 효과
     
-    @Column @Getter
-    private String drugImageURL; //이미지 URL (저장용)
+    @Column
+    private String drugImageUrl; //이미지 URL (저장용)
 
     @Column @Getter
-    private String drugProvideImageURL; //이미지 URL (보여주기용)
+    private String drugProvideImageUrl; //이미지 URL (보여주기용)
 
     @Getter @Setter
     @Convert(converter = StringListConverter.class)
-    List<String> cureURL; // 치료방법 URL
+    List<String> cureUrl; // 치료방법 URL
 
 
 
